@@ -1,0 +1,22 @@
+body {
+   
+    text-align: center;
+    padding:5%;
+    color:white;
+}
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: grey;
+    padding:5%;
+    border-radius: 15px;
+    border:solid black 2px;
+    
+}
+
+
+button {
+    margin:5px;
+}
