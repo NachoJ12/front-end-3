@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
-import Pokedex from './Pokedex';
-import pokedexJSON from '../pokedex.json';
+import './App.css';
+import Pokedex from './components/Pokedex/Pokedex';
+import pokedexJSON from './pokedex.json';
+import Pokemon from './components/Pokemon/Pokemon';
 
 // AREA DE TRABAJO --> Reemplazar por el JSON
 const pokedex = pokedexJSON;
-//   {
-//     id: 1,
-//     name: 'Bulbasaur',
-//     type: ['Grass', 'Poison'],
-//   },
-//   {
-//     id: 2,
-//     name: 'Ivysaur',
-//     type: ['Grass', 'Poison'],
-//   },
-//
+
 // AREA DE TRABAJO -----------------------------------
 
 export default class App extends Component {
@@ -25,7 +16,12 @@ export default class App extends Component {
   state = {
     pokemons: pokedex,
     //pokemon: [pokedex[0].name, pokedex[0].id, pokedex[0].type],
-    pokemon: [this.random.name, this.random.id, this.random.type],
+    pokemon: [
+      this.random.name,
+      this.random.id,
+      this.random.type,
+      this.random.base,
+    ],
   };
   // AREA DE TRABAJO -------------------------------------------
 
@@ -65,18 +61,14 @@ export default class App extends Component {
     /* AREA DE TRABAJO
     Pueden usar desestructuracion o directamente modificar las variables this.pokemon por this.state...
     */
+    //console.log('poke', this.state.pokemon[3].HP);
     return (
-      <div style={{ display: 'flex' }}>
-        <div className="container">
-          <img
-            id="pokemonImg"
-            src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${this.getPokemon()}.png`}
-            alt={this.state.pokemon[0]}
-          />
-          <p id="name">{`${
-            this.state.pokemon[0]
-          } is a pokemon type ${this.getTypes()}`}</p>
-        </div>
+      <div className="container">
+        <Pokemon
+          getPokemon={this.getPokemon}
+          getTypes={this.getTypes}
+          pokemon={this.state.pokemon}
+        />
         <Pokedex updateParent={this.update} pokemons={this.state.pokemons} />
       </div>
     );
