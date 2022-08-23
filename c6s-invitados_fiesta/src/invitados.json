@@ -1,0 +1,5 @@
+[
+  { "nombre": "Nicolas", "estaEnLista": true, "tarea": "papas fritas" },
+  { "nombre": "Ivan", "estaEnLista": false, "tarea": "pizzas" },
+  { "nombre": "Carolina", "estaEnLista": true, "tarea": "bebidas" }
+]
