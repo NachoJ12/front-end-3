@@ -1,0 +1,29 @@
+.form {
+  margin: 0 auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input[type='text'],
+input[type='number'] {
+  padding: 0.5rem 0.8rem;
+}
+
+.btn {
+  background-color: #3182ce;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 38px;
+  padding: 0 20px;
+  width: fit-content;
+  align-self: center;
+  margin: 1rem;
+}
+
+.btn:hover {
+  background-color: #265b8d;
+}
